@@ -1,0 +1,9 @@
+.movieItem {
+  display: flex;
+  flex-direction: column;
+  max-width: 451px;
+  max-height: 279px;
+
+
+
+}
