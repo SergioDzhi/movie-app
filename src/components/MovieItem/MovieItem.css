@@ -1,9 +1,40 @@
-.movieItem {
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 28.1875rem;
+  height: 17.4375rem;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+.space {
+
   display: flex;
   flex-direction: column;
-  max-width: 451px;
-  max-height: 279px;
+  box-sizing: border-box;
+  max-height: 17.5625rem;
+  width: 13.5rem;
+  padding-left: 10px;
+
+}
+
+.title {
 
 
+  margin: 0;
+
+}
+
+
+.paragraph {
+  width: 12.5rem;
+  height: 9.375rem;
+  overflow: hidden;
 
 }

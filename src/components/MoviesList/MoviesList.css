@@ -1,60 +1,32 @@
 .moviesList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-family: "Inter", sans-serif;
-  gap: 32px;
-  background: #F7F7F7;
-  box-sizing: border-box;
-}
-
-.movieCard {
-  display: flex;
-  font-size: 12px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 451px);
+  gap: 36px;
+  width: 938px;
   margin: 0;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s;
-  width: 451px;
-  height: 279px
-}
-
-
-
-.movieImage img {
-  width: 11.4375rem;
-  height: 17.5625rem;
-  transform: scale(1.02);
+  padding: 34px 0 0 36px;
 
 }
 
-.movieDetails {
-  padding-left: 20px;
-  padding-rigth: 20px;
+
+.alert {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
 }
 
-.movieTitle {
+.spin {
+
+  background-color: #f5f5f5;
+}
+
+.alertNotFound {
+
+  width: 58.625rem;
+  background-color: #f5f5f5;
+  align-items: center;
+  height: 100px;
   font-size: 20px;
-  margin: 0;
-  color: #333;
-}
+  font-weight: 400;
+  color: #000000;
 
-.movieYear {
-  font-size: 12px;
-  color: #777;
-  margin: 10px 0;
-}
-
-.movieOverview {
-  font-size: 12px;
-  color: #555;
-  margin: 0;
 
 }

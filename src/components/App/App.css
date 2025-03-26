@@ -1,3 +1,7 @@
-@import url(../MoviesList/MoviesList.css);
-@import url(../MovieItem/MovieItem.css);
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url(/src/index.css);
+@import url(/src/components/MoviesList/MoviesList.css);
+@import url(/src/components/SearchPanel/SearchPanel.css);
+@import url(/src/components/Header/Header.css);
+@import url(/src/components/Footer/Footer.css);
+@import url(/src/components/MovieItem/MovieItem.css);
