@@ -1,14 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import MovieItem from "../MovieItem/MovieItem";
-import { Spin, Alert } from "antd";
+import { Alert } from "antd";
+import { MovieContext } from "../context/MovieContext";
+const MoviesList = () => {
+  const {
+    movies,
+    fetchMovies,
 
-const MoviesList = ({ movies, fetchMovies, loading, error }) => {
+    loading,
+    error,
+  } = useContext(MovieContext);
+
   useEffect(() => {
     fetchMovies();
   }, []);
 
   return (
-    <Spin className="spin" spinning={loading}>
+    <ul className="moviesList">
+      {movies.length === 0 && !loading && (
+        <Alert
+          className="alertNotFound"
+          message="По вашему запросу ничего не найдено"
+          type="info"
+        />
+      )}
+      {movies.map((movie) => (
+        <MovieItem key={movie.id} movie={movie} />
+      ))}
       {error && (
         <Alert
           className="alert"
@@ -17,20 +35,7 @@ const MoviesList = ({ movies, fetchMovies, loading, error }) => {
           type="error"
         />
       )}
-
-      <ul className="moviesList">
-        {movies.length === 0 && !loading && (
-          <Alert
-            className="alertNotFound"
-            message="По вашему запросу ничего не найдено"
-            type="info"
-          />
-        )} 
-        {movies.map((movie) => (
-          <MovieItem key={movie.id} movie={movie} />
-        ))}
-      </ul>
-    </Spin>
+    </ul>
   );
 };
 

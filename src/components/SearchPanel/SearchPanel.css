@@ -1,4 +1,4 @@
-.input {
+.searchPanel {
   margin: 0 36px;
   padding: 0;
   width: 58.625rem;
@@ -14,7 +14,7 @@
   border: 1px solid rgba(217, 217, 217, 1)
 }
 
-.input::placeholder {
+.searchPanel::placeholder {
   color: rgba(0, 0, 0, 0.65);
   padding-left: 12px;
 }

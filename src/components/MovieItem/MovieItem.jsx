@@ -3,7 +3,7 @@ import { enGB } from "date-fns/locale";
 import { Card, Typography, Space, Tag } from "antd";
 const { Title, Paragraph, Text } = Typography;
 import { ConfigProvider } from "antd";
-
+import sliceText from "../utils/utils";
 const MovieItem = ({
   movie: { title, release_date, overview, poster_path, genre_ids },
 }) => {
@@ -54,7 +54,11 @@ const MovieItem = ({
               <Tag key={genre}>{genre}</Tag>
             ))}
           </Space>
-          <Paragraph className="paragraph">{overview}</Paragraph>
+          {sliceText(overview, 30) && (
+            <Paragraph className="paragraph">
+              {sliceText(overview, 30)}
+            </Paragraph>
+          )}
         </Space>
       </Card>
     </ConfigProvider>

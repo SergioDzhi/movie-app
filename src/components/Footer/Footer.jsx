@@ -1,6 +1,10 @@
 import { Pagination } from "antd";
 import { ConfigProvider } from "antd";
-const Footer = ({ currentPage, total, onPageChange }) => {
+import { useContext } from "react";
+import { MovieContext } from "../context/MovieContext";
+const Footer = () => {
+  const { currentPage, handlePageChange } = useContext(MovieContext);
+
   return (
     <ConfigProvider
       theme={{
@@ -19,8 +23,8 @@ const Footer = ({ currentPage, total, onPageChange }) => {
       <Pagination
         align="center"
         current={currentPage}
-        total={total}
-        onChange={onPageChange}
+        total={50}
+        onChange={handlePageChange}
       />
     </ConfigProvider>
   );
