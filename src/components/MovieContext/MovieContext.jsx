@@ -78,8 +78,7 @@ function MovieProvider({ children }) {
       const data = await response.json();
 
       if (data.success) {
-        console.log("Фильм успешно оценен!");
-        fetchRatedMovies(); 
+        fetchRatedMovies();
       } else {
         console.error("Ошибка при оценке фильма:", data);
       }
