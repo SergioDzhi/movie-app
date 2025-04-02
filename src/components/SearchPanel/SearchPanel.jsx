@@ -1,19 +1,22 @@
 import { Input } from "antd";
-
 import debounce from "lodash.debounce";
-import { useContext } from "react";
-import { MovieContext } from "../context/MovieContext";
+import { useContext, useCallback } from "react";
+import { MovieContext } from "../MovieContext/MovieContext";
 import "./SearchPanel.css";
 
 const SearchPanel = () => {
   const { handleSearch } = useContext(MovieContext);
-  const handleDebounce = debounce(handleSearch, 1000);
+
+  const handleDebounce = useCallback(debounce(handleSearch, 1000), [
+    handleSearch,
+  ]);
 
   return (
     <Input
+      style={{ padding: 11 }}
       className="searchPanel"
       placeholder="Type to search..."
-      onChange={(event) => handleDebounce(event)}
+      onChange={handleDebounce}
       autoFocus
     />
   );

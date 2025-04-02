@@ -2,6 +2,7 @@
 @import url(/src/index.css);
 @import url(/src/components/MoviesList/MoviesList.css);
 @import url(/src/components/SearchPanel/SearchPanel.css);
-@import url(/src/components/Header/Header.css);
+@import url(/src/components/TabsComponent/TabsComponent.css);
 @import url(/src/components/Footer/Footer.css);
 @import url(/src/components/MovieItem/MovieItem.css);
+@import url(/src/components/MovieRated/MovieRated.css);

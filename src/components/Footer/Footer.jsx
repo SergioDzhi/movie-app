@@ -1,7 +1,7 @@
 import { Pagination } from "antd";
 import { ConfigProvider } from "antd";
 import { useContext } from "react";
-import { MovieContext } from "../context/MovieContext";
+import { MovieContext } from "../MovieContext/MovieContext";
 const Footer = () => {
   const { currentPage, handlePageChange } = useContext(MovieContext);
 

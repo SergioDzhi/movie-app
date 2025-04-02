@@ -1,0 +1,14 @@
+.moviesRatedList {
+
+
+  display: grid;
+  grid-template-columns: repeat(2, 451px);
+  gap: 36px;
+  width: 938px;
+  margin: 0;
+  padding: 34px 0 0 36px;
+
+
+
+
+}
