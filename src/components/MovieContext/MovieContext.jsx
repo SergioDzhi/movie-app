@@ -61,33 +61,25 @@ function MovieProvider({ children }) {
   }, [BASE_URL, apiKey]);
 
   const rateMovie = async (movieId, rating) => {
-    if (!movieId) {
-      console.error("Ошибка: movieId отсутствует!");
-      return;
-    }
-
-    if (!sessionId) {
-      console.error("Ошибка: sessionId отсутствует!");
-      return;
-    }
+    if (!movieId || !sessionId) return;
 
     const url = `${BASE_URL}/movie/${movieId}/rating?api_key=${apiKey}&guest_session_id=${sessionId}`;
 
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-        Authorization: `Bearer ${TOKEN}`,
-      },
-      body: JSON.stringify({ value: rating }),
-    };
-
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+          Authorization: `Bearer ${TOKEN}`,
+        },
+        body: JSON.stringify({ value: rating }),
+      });
+
       const data = await response.json();
 
       if (data.success) {
         console.log("Фильм успешно оценен!");
+        fetchRatedMovies(); 
       } else {
         console.error("Ошибка при оценке фильма:", data);
       }

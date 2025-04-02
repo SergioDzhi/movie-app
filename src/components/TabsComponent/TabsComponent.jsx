@@ -2,8 +2,11 @@ import { Tabs } from "antd";
 import SearchPanel from "../SearchPanel/SearchPanel";
 import MovieRated from "../MovieRated/MovieRated";
 import MoviesList from "../MoviesList/MoviesList";
+import { useMovieContext } from "../MovieContext/MovieContext";
 
 const TabsComponent = () => {
+  const { ratedMovieList } = useMovieContext();
+
   const itemsTabs = [
     {
       label: "Search",
@@ -19,6 +22,7 @@ const TabsComponent = () => {
       label: "Rated",
       key: "2",
       children: <MovieRated />,
+      disabled: ratedMovieList.length === 0,
     },
   ];
 
